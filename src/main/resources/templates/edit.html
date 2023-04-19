@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div th:each="el : ${act}" class="d-flex gap-2 justify-content-center py-5">
+    <form action="/certificate/show/{el.number}/edit" th:method="put">
+        <input type="text" th:value="${el.date}" name="date" placeholder="Введите дату">
+        <input type="text" th:value="${el.company}" name="company" placeholder="Введите компанию">
+        <input type="text" th:value="${el.workKind}" name="kind_of_work" placeholder="Введите вид работ">
+        <button type="submit">подтвердить</button>
+    </form>
+</div>
+</body>
+</html>
